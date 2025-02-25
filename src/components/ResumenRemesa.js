@@ -1,9 +1,9 @@
 "use client"
 
-const ResumenReserva = ({ reserva, liberarMesa }) => {
+const ResumenReserva = ({reserva, liberarMesa}) => {
     if (!reserva.mesaId) return null;
   
-    return (
+    return(
       <div className="mt-4">
         <h3>Resumen de la Reserva</h3>
         <p>Numero de mesa: {reserva.mesaId}</p>

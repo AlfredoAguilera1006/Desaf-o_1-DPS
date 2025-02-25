@@ -5,19 +5,18 @@ import Mesa from './Mesa';
 import SelectorZona from '../components/Mesa';
 import ResumenReserva from '../components/ResumenRemesa';
 
-
 const PlanoRestaurante = () => {
     const [mesas, setMesas] = useState([
-      { id: 1, zona: ' Terraza', ocupada: false },
-      { id: 2, zona: ' Terraza', ocupada: false },
-      { id: 3, zona: ' Terraza', ocupada: false },
-      { id: 4, zona: ' Terraza', ocupada: false },
-      { id: 5, zona: ' Interior', ocupada: false },
-      { id: 6, zona: ' Interior', ocupada: false },
-      { id: 7, zona: ' Interior', ocupada: false },
-      { id: 8, zona: ' Interior', ocupada: false },
-      { id: 9, zona: ' VIP', ocupada: false },
-      { id: 10, zona: ' VIP', ocupada: false },
+      { id: 1, zona: ' Terraza',ocupada: false},
+      { id: 2, zona: ' Terraza',ocupada: false},
+      { id: 3, zona: ' Terraza',ocupada: false},
+      { id: 4, zona: ' Terraza',ocupada: false },
+      { id: 5, zona: ' Interior',ocupada: false},
+      { id: 6, zona: ' Interior',ocupada: false },
+      { id: 7, zona: ' Interior',ocupada: false},
+      { id: 8, zona: ' Interior',ocupada: false},
+      { id: 9, zona: ' VIP',ocupada: false},
+      { id: 10, zona: ' VIP',ocupada: false},
     ]);
     const [reserva, setReserva] = useState({ mesaId: null, cantidadPersonas: 0 });
   
@@ -57,7 +56,7 @@ const PlanoRestaurante = () => {
   
     const totalPersonas = mesasReservadas.reduce((total, mesa) => total + mesa.cantidadPersonas, 0);
 
-    return (
+    return(
       <div className="container">
         <h1>Reserva de Mesas</h1>
         <SelectorZona mesas={mesas} reservarMesa={reservarMesa} />
@@ -70,7 +69,7 @@ const PlanoRestaurante = () => {
         <h2>Mesas Reservadas</h2>
         <ul className="list-unstyled mb-0">
           {mesasReservadas.map((mesa) => (
-            <li key={mesa.id} className="d-flex justify-content-between mb-2">
+            <li key={mesa.id} className="d-flex justify-content-between mb-2"> //Ocupe acá un poco de css en el lugar ya que me daba problemas colocarlo en otro lugar
               <span>
                 Mesa {mesa.id} - Zona: {mesa.zona} - Personas: {mesa.cantidadPersonas}
               </span>
